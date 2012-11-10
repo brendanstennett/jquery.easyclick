@@ -31,7 +31,7 @@
     var links = $(this).find("a");
 
     // depending on the number of links, trigger one
-    if (!event.easyClicked) {
+    if (!event.easyClicked && !$(event.target).is('a')) {
       if (links.length == 1) {
         var link = links.eq(0);
       } else {
