@@ -32,17 +32,20 @@
 
     // depending on the number of links, trigger one
     if (!event.easyClicked && !$(event.target).is('a')) {
-      if (links.length == 1) {
+
+      // get correct link
+      target = links.filter('a[data-easy-click-target]')
+      if (target.length > 0)
+        var link = target;
+      else
         var link = links.eq(0);
-      } else {
-        var link = links.filter('a[data-easy-clickable]').eq(0);
-      }
 
       // act on link
       if (options.followLinks)
         window.location = link.attr('href');
       else
         link.trigger(e);
+
     }
   }
 
@@ -50,7 +53,7 @@
     options = $.extend({}, {
       followLinks: true
     }, options);
-    $(this).css('cursor','pointer').live('click', options, clickHandler);
+    $(this).live('click', options, clickHandler);
   };
 
 })(jQuery);

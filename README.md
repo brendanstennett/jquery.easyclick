@@ -21,7 +21,7 @@ A jquery plugin that allows expanding a clickable area without creating addition
 
 ### Multiple Links
 
-If the element has multiple children that are links, then add the `data-easy-clickable` attribute to the 
+If the element has multiple children that are links, then add the `data-easy-click-target` attribute to the 
 html element that the behavior should be triggered for.
 
 ## License
