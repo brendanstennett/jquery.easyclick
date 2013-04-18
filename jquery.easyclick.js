@@ -53,7 +53,7 @@
     options = $.extend({}, {
       followLinks: true
     }, options);
-    $(this).live('click', options, clickHandler);
+    $(this).on('click', options, clickHandler);
   };
 
 })(jQuery);
