@@ -42,7 +42,10 @@
 
       // act on link
       if (options.followLinks)
-        window.location = link.attr('href');
+        if (link.attr('target') == '_blank')
+          window.open(link.attr('href'));
+        else
+          window.location = link.attr('href');
       else
         link.trigger(e);
 
